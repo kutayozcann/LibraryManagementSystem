@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="home-container">
+    <div class="welcome-section">
+        <h1>Library Management System</h1>
+        <p>Step into the world of books!</p>
+    </div>
+    
+    <div class="features-section">
+        <div class="feature-card">
+            <i class="fas fa-book"></i>
+            <h3>Books List</h3>
+            <p>View and manage all books</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-user-edit"></i>
+            <h3>Author Management</h3>
+            <p>Add, edit and delete authors.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-plus-circle"></i>
+            <h3>Add New Book</h3>
+            <p>Add new books to the library</p>
+        </div>
+    </div>
+    
+    <div class="quick-access-buttons">
+        <a asp-controller="Book" asp-action="List" class="btn btn-primary">
+            <i class="fas fa-book"></i>Books List
+        </a>
+       
+        <a asp-controller="Author" asp-action="List" class="btn btn-secondary">
+            <i class="fas fa-user-edit"></i>Authors List
+        </a>
+        
+    </div>
+</div>

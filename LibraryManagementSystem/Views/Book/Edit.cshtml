@@ -1,0 +1,53 @@
+@{
+    @model LibraryManagementSystem.ViewModels.BookViewModel
+    ViewData["Title"] = "Edit Book";
+}
+
+<div class="edit-form">
+    <h2>Edit Book</h2>
+    <form method="post" asp-action="Edit">
+        <input type="hidden" asp-for="Id"/>
+
+        <div>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" id="Title" type="text"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Genre"></label>
+            <input asp-for="Genre" id="Genre" type="text"/>
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="PublishDate">Publish Date</label>
+            <input asp-for="PublishDate" id="PublishDate" type="date"/>
+            <span asp-validation-for="PublishDate" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="ISBN"></label>
+            <input asp-for="ISBN" id="ISBN" type="text"/>
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="CopiesAvailable">Copies Available</label>
+            <input asp-for="CopiesAvailable" id="CopiesAvailable" type="number"/>
+            <span asp-validation-for="CopiesAvailable" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="AuthorId">Author</label>
+            <select asp-for="AuthorId" asp-items="ViewBag.Authors">
+                <option value="">Select an Author</option>
+            </select>
+            <span asp-validation-for="AuthorId" class="text-danger"></span>
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <a asp-controller="Book" asp-action="List" class="back-link">Go Back</a>
+</div>

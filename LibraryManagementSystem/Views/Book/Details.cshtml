@@ -1,0 +1,41 @@
+@{
+    @model LibraryManagementSystem.ViewModels.BookViewModel
+    ViewData["Title"] = "Book Details";
+}
+
+<div class="book-details-container">
+    <div class="book-details-header">
+        @Model.Title
+    </div>
+    <div class="book-details-body">
+        <div class="detail-item">
+            <strong>Author:</strong>
+            <span>@Model.AuthorFullName</span>
+        </div>
+        <div class="detail-item">
+            <strong>Genre:</strong>
+            <span>@Model.Genre</span>
+        </div>
+        <div class="detail-item">
+            <strong>ISBN:</strong>
+            <span>@Model.ISBN</span>
+        </div>
+        <div class="detail-item">
+            <strong>Publish Date:</strong>
+            <span>@Model.PublishDate.ToShortDateString()</span>
+        </div>
+        <div class="detail-item">
+            <strong>Copies Available:</strong>
+            <span>@Model.CopiesAvailable</span>
+        </div>
+    </div>
+    <div class="btn-container">
+        <a asp-action="List" asp-controller="Book" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to List
+        </a>
+        <a asp-action="Edit" asp-controller="Book" asp-route-id="@Model.Id" class="btn btn-warning">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+
+    </div>
+</div>

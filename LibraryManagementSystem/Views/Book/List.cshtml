@@ -1,0 +1,43 @@
+@{
+    @model List<LibraryManagementSystem.ViewModels.BookViewModel>
+    ViewData["Title"] = "Books List";
+}
+
+<div class="book-list-container">
+    <h2>Books List</h2>
+    <table class="book-table table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publish Date</th>
+            <th>ISBN</th>
+            <th>Copies Available</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Genre</td>
+                <td>@book.PublishDate.ToShortDateString()</td>
+                <td>@book.ISBN</td>
+                <td style="text-align: center">@book.CopiesAvailable</td>
+                <td><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
+                    <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id" class="btn btn-secondary">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <a href="/Book/Create" class="btn btn-primary">Add New Book</a>
+</div>

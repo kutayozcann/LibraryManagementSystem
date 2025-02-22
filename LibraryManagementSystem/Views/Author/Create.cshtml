@@ -1,0 +1,35 @@
+@{
+    @model LibraryManagementSystem.ViewModels.AuthorViewModel
+    ViewData["Title"] = "Add New Author";
+}
+
+
+<h2 class="text-center p-4">Add New Author</h2>
+
+<div class="create-author-container pb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post" class="card p-4 shadow">
+                <div class="form-group mb-3">
+                    <label asp-for="FirstName" class="form-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" type="text"
+                           placeholder="Enter author's first name"/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="LastName" class="form-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" type="text" placeholder="Enter author's last name"/>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+                    <input asp-for="DateOfBirth" class="form-control" type="date"/>
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
