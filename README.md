@@ -26,10 +26,6 @@ The project follows the Model-View-Controller (MVC) architecture. The main compo
 
 ## How to Run the Project
 
-### Prerequisites
-- [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
-- Visual Studio 2022 or Visual Studio Code (recommended)
-
 ### Steps
 1. Clone the repository:
    ```bash
@@ -74,9 +70,4 @@ The project uses Razor Views for rendering the user interface. Below are the vie
 - **Create.cshtml**: Form for adding a new author.
 - **Edit.cshtml**: Form for editing an existing author.
 - **Delete.cshtml**: Confirmation page for deleting an author.
-
-## Contributing
-Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request. Feel free to open an issue for suggestions or bug reports.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+  
